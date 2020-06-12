@@ -34,7 +34,6 @@ public class RestSubscriptionController {
     }}
     @RequestMapping("/unsubscribe")
     public String unsubscribe(@RequestParam String email) {
-//
         Optional<Subscription> subscription = subscriptionRepo.findByEmail(email);
         if (! subscription.isPresent())
             return "Email not found";
